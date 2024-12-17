@@ -1,0 +1,108 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "license": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "url",
+                "name"
+            ]
+        },
+        "event": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "references": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "title",
+                "description"
+            ]
+        },
+        "day": {
+            "type": "object",
+            "properties": {
+                "day": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "events": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/event"
+                    }
+                }
+            },
+            "required": [
+                "day",
+                "url",
+                "events"
+            ]
+        },
+        "month": {
+            "type": "object",
+            "properties": {
+                "month": {
+                    "type": "string"
+                },
+                "days": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/day"
+                    }
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "month",
+                "days",
+                "url"
+            ]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "source": {
+            "type": "string"
+        },
+        "license": {
+            "$ref": "#/definitions/license"
+        },
+        "months": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/month"
+            }
+        }
+    },
+    "required": [
+        "source",
+        "license",
+        "months"
+    ]
+}
