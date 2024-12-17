@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/OMUAPPS/assets/refs/heads/main/data/events/schema.json",
+  "$schema": "https://github.com/OMUAPPS/assets/raw/refs/heads/main/data/events/schema.json",
   "source": "https://www.nnh.to/",
   "name": "1月の記念日・年中行事",
   "description": "富山いづみによって作成された1月の記念日・年中行事のデータです。",
