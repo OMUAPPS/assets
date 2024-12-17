@@ -90,6 +90,12 @@
         "source": {
             "type": "string"
         },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
         "license": {
             "$ref": "#/definitions/license"
         },
@@ -102,6 +108,8 @@
     },
     "required": [
         "source",
+        "name",
+        "description",
         "license",
         "months"
     ]
